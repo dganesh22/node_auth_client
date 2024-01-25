@@ -40,28 +40,28 @@ function Home() {
                 docs && docs.map((item,index) => {
                   return (
                     <div className="col-lg-3 col-md-6 col-sm-12" key={index}>
-                      <NavLink to={`/view/type/${item.extName}/file/${item.newName}`}>
-                        <div className="card mt-3 mb-3">
+                      {/* <NavLink to={`/view/file/${item._id}`}> */}
+                        <div className="card file mt-3 mb-3">
                             {
-                               item.extName === ".png" || item.extName === ".jpg" ? <img src={`${url}/${item.newName}`} className='card-img-top' /> : null
+                               item.extName === ".png" || item.extName === ".jpg" ? <img src={`${url}/${item.newName}`} className='img-fluid' /> : null
                             }
                             {
-                              item.extName === ".pdf" ? <embed src={`https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png`} className='card-img-top' /> : null
-                            }
-
-                            {
-                               item.extName === ".pptx" || item.extName === ".ppt" ? <embed src={`https://www.freeiconspng.com/thumbs/ppt-icon/powerpoint-icon-microsoft-powerpoint-icon-network-powerpoint-icons-and-3.png`} className='card-img-top' /> : null
+                              item.extName === ".pdf" ? <embed src={`https://blog.idrsolutions.com/app/uploads/2020/10/pdf-1.png`} className='img-fluid' /> : null
                             }
 
                             {
-                               item.extName === ".docx" || item.extName === ".doc" ? <embed src={`https://img.freepik.com/premium-vector/doc-file-icon-flat-design-graphic-illustration-vector-docicon_666746-185.jpg`} className='card-img-top' /> : null
+                               item.extName === ".pptx" || item.extName === ".ppt" ? <embed src={`https://www.freeiconspng.com/thumbs/ppt-icon/powerpoint-icon-microsoft-powerpoint-icon-network-powerpoint-icons-and-3.png`} className='img-fluid' /> : null
+                            }
+
+                            {
+                               item.extName === ".docx" || item.extName === ".doc" ? <embed src={`https://img.freepik.com/premium-vector/doc-file-icon-flat-design-graphic-illustration-vector-docicon_666746-185.jpg`} className='img-fluid' /> : null
                             }
                             <div className="card-body">
                               <h6 className="text-center text-success text-capitalize">
                                  { item.info ? item.info.name : null } </h6>
                             </div>
                         </div>
-                        </NavLink>
+                        {/* </NavLink> */}
                     </div>
                   )
                 })

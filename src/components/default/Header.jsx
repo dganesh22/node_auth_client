@@ -5,16 +5,8 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 
 function Header() {
-    const context = useContext(AuthContext)
-    const isLogin = context.isLogin
-    const isAdmin = context.isAdmin
-    const isUser = context.isUser
-    // handlers
-    const setIsLogin = context.setIsLogin
-    const setCurrentUser = context.setCurrentUser
-    const setIsUser = context.setIsUser
-    const setIsAdmin = context.setIsAdmin
-    const setToken = context.setToken
+
+    const {isLogin,isAdmin,isUser,currentUser, setIsAdmin, setIsLogin, setIsUser, setToken, setCurrentUser} = useContext(AuthContext)
 
     // logout
     const logoutHandler = async () => {
@@ -55,9 +47,19 @@ function Header() {
                             </ul>
                             <ul className="navbar-nav">
                                 <li className="nav-item dropdown">
-                                    <NavLink to={`/`} className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                                            Account <i className="bi bi-person"></i>
-                                    </NavLink>
+                                    {
+                                        currentUser ? (
+                                            <NavLink to={`/`} className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                                            <strong className='text-uppercase'>
+                                                 { currentUser ? currentUser.name : "Guest"} </strong>
+                                             <i className="bi bi-person"></i>
+                                        </NavLink>
+                                        ) : (
+                                            <NavLink to={`/`} className="nav-link">
+                                                Logout
+                                            </NavLink>
+                                        )
+                                    }
                                         {
                                             isUser ? (
                                                 <ul className="dropdown-menu">

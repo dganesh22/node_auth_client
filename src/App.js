@@ -12,6 +12,7 @@ import { ToastContainer } from 'react-toastify'
 import PrivateRoute from './Auth/PrivateRoute'
 import { AuthContext } from './Context/AuthContext'
 import View from './components/screens/View'
+import FileUpload from './components/user/FileUpload'
 
 function App() {
   const context = useContext(AuthContext)
@@ -26,7 +27,8 @@ function App() {
                     <Route path={`/`} element={<Home/>} />
                     <Route path={`/admin/dashboard`} element={<AdminDashboard/>} />
                     <Route path={`/user/dashboard`} element={<UserDashboard/>} />
-                    <Route path={`/view/type/:ext/file/:title`} element={<View/>} />
+                    <Route path={`/upload/new`} element={<FileUpload/>} />
+                    <Route path={`/view/file/:id`} element={<View/>} />
                </Route>
 
                 <Route path={`/login`} element={isLogin? <Navigate to={`/`}/> : <Login/>} />
