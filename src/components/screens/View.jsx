@@ -52,9 +52,7 @@ function View() {
 
                             {
                                file.extName === ".pptx" || file.extName === ".ppt" || file.extName === ".docx" || file.extName === ".doc" || file.extName === ".xls" || file.extName === ".xlsx" ? <iframe src={`https://view.officeapps.live.com/op/embed.aspx?src=${url}/${file.newName}`} className='img-fluid' style={{ width: '100vw',height: '80vh'}}></iframe> : null
-                            }
-
-                         
+                            }                         
                 </div>
               </div>
           </div>

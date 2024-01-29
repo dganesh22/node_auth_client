@@ -106,11 +106,14 @@ function Login() {
                           </div>
                       </form>
                   </div>
-                  <div className="card-footer">
-                          <p className="text-end text-danger">
-                              <strong>Are you a new User</strong> 
-                              <NavLink to={`/register`} className="btn btn-link">Register Here</NavLink>
-                          </p>
+                  <div className="card-footer d-flex justify-content-between">
+                          <div className="text-start">
+                              <NavLink to={`/generate/password`} className={'btn btn-link text-success'}>Forgot Password?</NavLink>
+                          </div>
+                          <div className="text-end text-danger">
+                              
+                              <NavLink to={`/register`} className="btn btn-link text-danger">Register Here</NavLink>
+                          </div>
                   </div>
                 </div>
             </div>

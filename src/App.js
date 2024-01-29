@@ -13,6 +13,8 @@ import PrivateRoute from './Auth/PrivateRoute'
 import { AuthContext } from './Context/AuthContext'
 import View from './components/screens/View'
 import FileUpload from './components/user/FileUpload'
+import GeneratePassword from './components/auth/GeneratePassword'
+import ResetPassword from './components/auth/ResetPassword'
 
 function App() {
   const context = useContext(AuthContext)
@@ -30,7 +32,8 @@ function App() {
                     <Route path={`/upload/new`} element={<FileUpload/>} />
                     <Route path={`/view/file/:id`} element={<View/>} />
                </Route>
-
+               <Route path={`/password/reset`} element={isLogin? <Navigate to={`/`}/>: <ResetPassword/>} />
+               <Route path={`/generate/password`} element={isLogin? <Navigate to={`/`}/>: <GeneratePassword/>} />
                 <Route path={`/login`} element={isLogin? <Navigate to={`/`}/> : <Login/>} />
                 <Route path={`/register`} element={isLogin? <Navigate to={`/`}/> : <Register/>} />
                 <Route path={`/*`} element={<Pnf/>} />
