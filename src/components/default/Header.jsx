@@ -31,7 +31,7 @@ function Header() {
     <header>
         <nav className={isLogin ? "navbar navbar-expand-md navbar-dark bg-success": "navbar navbar-expand-md navbar-dark bg-primary"}>
             <div className="container">
-                <NavLink to={`/`} className="navbar-brand">MERN Project</NavLink>
+                <NavLink to={`/`} className="navbar-brand">FileBox</NavLink>
 
                 <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
                     <span className="navbar-toggler-icon"></span>
